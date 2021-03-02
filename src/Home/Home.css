@@ -1,0 +1,11 @@
+.Home{
+    background-image: url(../Image/transmission-gears-500x500.jpg);
+    background-size: 300px ;
+    position:fixed;
+    background-position:center ;
+    margin-top: 90px;
+    margin-left: 420px;
+}
+.Button{
+    background-color:#cce6ff;
+}

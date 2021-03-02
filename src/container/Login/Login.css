@@ -1,0 +1,22 @@
+.Login{
+    background-color:rgba(192, 192, 192, 0.322);
+    color:black;
+  width: 300px;
+
+  padding: 50px;
+  margin:auto;
+  position: relative;
+  opacity: 1;
+  
+}
+.Input{
+    display: inline-block;
+    float:right ;
+}
+
+.Submit{
+    background-color: lightgrey;
+}
+.Submit:hover{
+    background-color:olivedrab;
+}

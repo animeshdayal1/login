@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React ,{Component} from 'react';
+import Login from './container/Login/Login';
+//import SignUp from './components/SignUp';
+import Home from './Home/Home';
+import {BrowserRouter} from 'react-router-dom';
+import fire from './fire';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+state={
+  user:{},
+}
+componentDidMount(){
+this.authListner()
+}
+
+authListner(){
+  fire.auth().onAuthStateChanged((user)=>{
+    if(user){
+      this.setState({user})
+    }else{
+      this.setState({user:null})
+    }
+  })
+}
+
+  render(){
+    return (
+      <BrowserRouter>
+      <div className="App">
+      <br/>
+      <br/>
+      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      {this.state.user? (<Home/>) : (<Login/>)}
+      {/* <Login/> */}
+      </div>
+      </BrowserRouter>
+      
+      
+    );
+  }
+ 
 }
 
 export default App;
